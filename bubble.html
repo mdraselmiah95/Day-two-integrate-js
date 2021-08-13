@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubble</title>
+</head>
+
+<body>
+    <h2>Event bubble vi</h2>
+    <section id="section-container">
+        <h4>Bubble vai list:</h4>
+        <ul id="list-container">
+            <li class="item">This is item one</li>
+            <li id="second-item" class="item">This is item Three</li>
+            <li class="item">This is item Four</li>
+            <li class="item">This is item Two</li>
+            <li class="item">This is item Five</li>
+            <li class="item">This is item Six.</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('second-item').addEventListener('click', function (event) {
+            console.log('second1 item clicked');
+            // event.stopPropagation();
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('second-item').addEventListener('click', function (event) {
+            console.log('second2 item clicked');
+            // event.stopPropagation();
+            // event.stopImmediatePropagation();
+        });
+        document.getElementById('second-item').addEventListener('click', function (event) {
+            console.log('second3 item clicked');
+            // event.stopPropagation();
+            // event.stopImmediatePropagation();
+        });
+        document.getElementById('second-item').addEventListener('click', function (event) {
+            console.log('second4 item clicked');
+            // event.stopPropagation();
+            // event.stopImmediatePropagation();
+        });
+
+
+        //ul
+        document.getElementById('second-item').addEventListener('click', function () {
+            console.log('ul clicked');
+        });
+        //section
+        document.getElementById('section-container').addEventListener('click', function () {
+            console.log('section clicked');
+        });
+    </script>
+</body>
+
+</html>

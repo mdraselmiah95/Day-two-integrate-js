@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+</head>
+
+<body>
+    <h2>Add your comment...</h2>
+    <section>
+        <h4>Your comment:</h4>
+        <div id="comment-container">
+            <p>It is naturally for people to assume that “doing something” is riskier than “doing nothing”.This isn’t
+                always the case. Sometimes “doing nothing” can be riskier in investing, business, politics
+                and life.I was reading a book this morning about political leadership. The author made the point that
+                the former.UK Prime Minister Gordon Brown never recovered from one event.</p>
+            <p>It is naturally for people to assume that “doing something” is riskier than “doing nothing”.This isn’t
+                always the case. Sometimes “doing nothing” can be riskier in investing, business, politics
+                and life.I was reading a book this morning about political leadership.</p>
+        </div>
+        <div>
+            <textarea name="" id="new-comment" cols="60" rows="3"></textarea> <br>
+            <button id="submit-comment">POST</button>
+        </div>
+    </section>
+    <script>
+        document.getElementById('submit-comment').addEventListener('click', function () {
+            //2.get user comment
+            const commentBox = document.getElementById('new-comment');
+            // const userComment = commentBox.value;
+
+            //3.create comment paragraph
+            const newComment = document.createElement('p');
+            newComment.innerText = commentBox.value;
+
+            //4. append the comment
+            const commentContainer = document.getElementById('comment-container');
+            commentContainer.appendChild(newComment);
+
+            //clean the comment Box
+            commentBox.value = '';
+        })
+    </script>
+</body>
+
+</html>
